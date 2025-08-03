@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Show do Milhão</title>
+  <link rel="stylesheet" href="estilo-jogo/jogo.css">
+  <script src="/Estrutura-Jogo/Jogo-js/script.js" defer></script>
+</head>
+<body>
+
+  <h1>Quiz do Milhão</h1>
+  <div id="quiz-container">
+    <!-- Pergunta 1 -->
+    <div class="pergunta ativa">
+      <h2>Pergunta 1: Qual tag é usada para criar um paragrafo em Html?</h2>
+      <div class="alternativas">
+        <button onclick="selecionar(0)">Div</button>
+        <button onclick="selecionar(0)">Span</button>
+        <button onclick="selecionar(1)">p</button> <!-- correta -->
+        <button onclick="selecionar(0)">H1</button>
+      </div>
+    </div>
+
+    <!-- Pergunta 2 -->
+    <div class="pergunta">
+      <h2>Pergunta 2: Qual atributo da tag define o caminho da imagem?</h2>
+      <div class="alternativas">
+        <button onclick="selecionar(0)">Href</button>
+        <button onclick="selecionar(0)">Link</button>
+        <button onclick="selecionar(1)">Src</button> <!-- correta -->
+        <button onclick="selecionar(0)">Alt</button>
+      </div>
+    </div>
+
+    <!-- Pergunta 3 -->
+    <div class="pergunta">
+      <h2>Pergunta 3: Qual linguagem usamos para criar páginas web?</h2>
+      <div class="alternativas">
+        <button onclick="selecionar(1)">HTML</button> <!-- correta -->
+        <button onclick="selecionar(0)">Python</button>
+        <button onclick="selecionar(0)">Java</button>
+        <button onclick="selecionar(0)">C++</button>
+      </div>
+    </div>
+    <div class="pergunta">
+      <h2>Pergunta 4: Qual propriedade é usada para deixar um texto em negrito?</h2>
+      <div class="alternativas">
+        <button onclick="selecionar(0)">Font-style</button> 
+        <button onclick="selecionar(0)">Text-decoration</button>
+        <button onclick="selecionar(1)">Font-weight</button> <!-- correta -->
+        <button onclick="selecionar(0)">Text-transform</button>
+      </div>
+    </div>
+    <div class="pergunta">
+      <h2>Pergunta 5: Qual valor da propriedade display faz com que os elementos fiquem um ao lado do outro, como blocos?</h2>
+      <div class="alternativas">
+        <button onclick="selecionar(0)">Inline</button> 
+        <button onclick="selecionar(0)">Block</button>
+        <button onclick="selecionar(0)">Inline-block</button>
+        <button onclick="selecionar(1)">Flex</button> <!-- correta -->
+      </div>
+    </div>
+    <div class="pergunta">
+      <h2>Pergunta 6: O que a propriedade overflow: hidden; faz?</h2>
+      <div class="alternativas">
+        <button onclick="selecionar(0)">Remove o conteúdo do elemento</button> 
+        <button onclick="selecionar(1)">Esconde o conteúdo que ultrapassa a caixa</button> <!-- correta -->
+        <button onclick="selecionar(0)">Adiciona uma barra de rolagem automaticamente</button>
+        <button onclick="selecionar(0)">Ajusta o tamanho do texto automaticamente</button>
+      </div>
+    </div>
+    <div class="pergunta">
+      <h2>Pergunta 7: Qual dessas opções cria uma função anônima em JavaScript?</h2>
+      <div class="alternativas">
+        <button onclick="selecionar(0)">function nome() {}</button> 
+        <button onclick="selecionar(0)">() => {}</button>
+        <button onclick="selecionar(1)">Function() {}</button> <!-- correta -->
+        <button onclick="selecionar(0)">Let nome = function nome() {}</button>
+      </div>
+    </div>
+    <div class="pergunta">
+      <h2>Pergunta 8: Qual dessas estrutura é usada para repetir um bloco de código enquanto uma condição for verdadeira?</h2>
+      <div class="alternativas">
+        <button onclick="selecionar(0)">If</button> 
+        <button onclick="selecionar(0)">Switch</button>
+        <button onclick="selecionar(1)">While</button> <!-- correta -->
+        <button onclick="selecionar(0)">Break</button>
+      </div>
+    </div>
+    <div class="pergunta">
+      <h2>Pergunta 9: Qual método adiciona um item no final de um array em javaScript?</h2>
+      <div class="alternativas">
+        <button onclick="selecionar(1)">Push()</button> <!-- correta -->
+        <button onclick="selecionar(0)">Pop()</button>
+        <button onclick="selecionar(0)">Shift()</button>
+        <button onclick="selecionar(0)">Unshift()</button>
+      </div>
+    </div>
+    <div class="pergunta">
+      <h2>Pergunta 10: O que o Break faz dentro de um loop?</h2>
+      <div class="alternativas">
+        <button onclick="selecionar(0)">Pula para a próxima repetição</button> 
+        <button onclick="selecionar(1)">Sai completamente do loop</button> <!-- correta -->
+        <button onclick="selecionar(0)">Recomeça o loop do início</button>
+        <button onclick="selecionar(0)">Ignora o erro e continua</button>
+      </div>
+    </div>
+
+  </div>
+
+  <button id="btnProxima" onclick="proximaPergunta()">Próxima</button>
+  <div id="resultado"></div>
+
+  <script>
+    let perguntaAtual = 0;
+    let acertos = 0;
+    let respostaSelecionada = null;
+
+    const perguntas = document.querySelectorAll(".pergunta");
+    const btnProxima = document.getElementById("btnProxima");
+    const resultado = document.getElementById("resultado");
+
+    function selecionar(correta) {
+      respostaSelecionada = correta;
+      btnProxima.style.display = "inline-block"; // mostrar botão "Próxima"
+    }
+
+    function proximaPergunta() {
+      if (respostaSelecionada === 1) {
+        acertos++;
+      }
+
+      perguntas[perguntaAtual].classList.remove("ativa");
+      perguntaAtual++;
+      respostaSelecionada = null;
+      btnProxima.style.display = "none";
+
+      if (perguntaAtual < perguntas.length) {
+        perguntas[perguntaAtual].classList.add("ativa");
+      } else {
+        mostrarResultado();
+      }
+    }
+
+    function mostrarResultado() {
+      resultado.innerHTML = `Você acertou ${acertos} de ${perguntas.length} perguntas!`;
+      resultado.style.display = "block";
+    }
+  </script>
+
+</body>
+</html>

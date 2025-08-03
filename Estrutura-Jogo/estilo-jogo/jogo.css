@@ -1,0 +1,33 @@
+body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 30px;
+    }
+
+    .pergunta {
+      display: none;
+      margin-bottom: 20px;
+    }
+
+    .ativa {
+      display: block;
+    }
+
+    .alternativas button {
+      display: block;
+      margin: 10px auto;
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+
+    #btnProxima {
+      margin-top: 20px;
+      display: none;
+      padding: 10px 20px;
+    }
+
+    #resultado {
+      font-size: 24px;
+      font-weight: bold;
+      display: none;
+    }
