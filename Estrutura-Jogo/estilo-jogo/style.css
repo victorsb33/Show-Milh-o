@@ -1,123 +1,155 @@
 body {
-      font-family: Arial, sans-serif;
-      background-color: #f0f2f5;
-      margin: 0;
-      padding: 0;
-      
-    }
-    header {
-      background-color: #002776;
-      color: white;
-      padding: 10px 20px;
-      font-size: 24px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .logo {
-      width: 100px;
-      height: auto;
-      margin-right: 20px;
-    }
-    .jogador {
-      margin-right: 20px;
-    }
-    .status {
-      padding: 10px 20px;
-      text-align: right;
-      
-    }
-    h2 {
-      font-size: 32px;
-      font-weight: bold;
-      color: #004aad;
-      margin-bottom: 10px;
-    }
-    p {
-      font-size: 18px;
-      color: #333;
-      margin: 20px 0;
-    }
-    input[type="text"] {
-      width: 250px;
-      padding: 10px 15px;
-      border: 2px solid #ccc;
-      border-radius: 8px;
-      font-size: 16px;
-      margin-bottom: 20px;
-      outline: none;
-      display: block;
-      transition: 0.3s;
-      text-align: center;
-      margin: 0 auto 20px auto;
-    }
-    input[type="text"]:focus {
-      border-color: #007bff;
-      box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
-    }
-    button {
-      background-color: #007bff;
-      color: white;
-      border: none;
-      padding: 12px 24px;
-      margin: 10px 8px;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 16px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-      transition: background-color 0.3s ease, transform 0.2s ease;
-    }
-    button:hover {
-      background-color: #0056b3;
-      transform: scale(1.05);
-    }
-    button:active {
-      transform: scale(0.95);
-    }
-    .input-section {
-      padding: 20px;
-      text-align: center;
-      margin: 0 auto;
-    }
-    .button-section {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      margin-top: 20px;
-    }
-    .tabelas {
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      gap: 40px;
-      margin-top: 20px;
-      flex-wrap: wrap;
-    }
-    .tabelas h2 {
-      text-align: center;
-      margin-bottom: 10px;
-      color: #222; 
-    }
-    table {
-      border-collapse: collapse;
-      background: #f9f9f9;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-      width: 100%;
-      max-width: 300px;
-    }
-    th, td {
-      padding: 10px;
-      text-align: center;
-      border-bottom: 1px solid #ddd;
-    }
-    thead {
-      background-color: #002776;
-      color: white;
-      font-weight: bold;
-      align-items: center;
-    }
-    tbody tr:hover {
-      background: #e0f0ff;
-    }
+  font-family: Arial, sans-serif;
+  background: linear-gradient(#4b0082, #6700a3, #1b2062, #050c38);
+  margin: 0;
+  padding: 0;
+  color: #e5e4e2;
+}
+header {
+  background-color: #4b0082;
+  color: #e5e4e2;
+  padding: 10px 20px;
+  font-size: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 4px solid #e5e4e2;
+}
+.logo {
+  width: 100px;
+  height: auto;
+  margin-right: 20px;
+}
+.jogador {
+  margin-right: 20px;
+  color: #e5e4e2;
+  font-weight: bold;
+}
+.status {
+  padding: 10px 20px;
+  text-align: right;
+  color: #e5e4e2;
+  font-weight: bold;
+}
+h2, h1 {
+  font-size: 32px;
+  font-weight: bold;
+  color: #e5e4e2;
+  margin-bottom: 10px;
+}
+p {
+  font-size: 18px;
+  color: #e5e4e2;
+  margin: 20px 0;
+}
+input[type="text"] {
+  width: 250px;
+  padding: 10px 15px;
+  border: 2px solid #e5e4e2;
+  border-radius: 8px;
+  font-size: 16px;
+  margin-bottom: 20px;
+  outline: none;
+  display: block;
+  transition: 0.3s;
+  text-align: center;
+  margin: 0 auto 20px auto;
+  background: #3a0066;
+  color: #e5e4e2;
+}
+input[type="text"]:focus {
+  border-color: #e5e4e2;
+  box-shadow: 0 0 8px #e5e4e280;
+}
+button {
+  background-color: #e5e4e2;
+  color: #4b0082;
+  border: none;
+  padding: 12px 24px;
+  margin: 10px 8px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  transition: background-color 0.3s, color 0.3s, transform 0.2s;
+  font-weight: bold;
+}
+button:hover {
+  background-color: #4b0082;
+  color: #e5e4e2;
+  transform: scale(1.05);
+  border: 2px solid #e5e4e2;
+}
+button:active {
+  transform: scale(0.95);
+}
+.input-section {
+  padding: 20px;
+  text-align: center;
+  margin: 0 auto;
+}
+.button-section {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+.tabelas {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+.tabelas h2 {
+  text-align: center;
+  margin-bottom: 10px;
+  color: #e5e4e2;
+}
+table {
+  border-collapse: collapse;
+  background: #3a0066;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  width: 100%;
+  max-width: 300px;
+  color: #e5e4e2;
+}
+th, td {
+  padding: 10px;
+  text-align: center;
+  border-bottom: 1px solid #e5e4e2;
+}
+thead {
+  background-color: #4b0082;
+  color: #e5e4e2;
+  font-weight: bold;
+}
+tbody tr:hover {
+  background: #5c1799;
+}
+.div-box {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(75,0,130,0.8);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+.div-ajuda {
+  background: #3a0066;
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 400px;
+  margin: auto;
+  text-align: left;
+  position: relative;
+  color: #e5e4e2;
+  border: 2px solid #e5e4e2;
+}
