@@ -1,13 +1,13 @@
-// Pega o caminho atual da página, tipo: "/index.html"
+// pega o endereço do arquivo que está aberto no navegador"
 const pagina = window.location.pathname;
 
-// Vai verifica se o usuário está na página "index.html"
+// Vai verifica se o usuário está na página "index.html" se sim, executa o código abaixo
 if (pagina.includes("index.html")) {
 
-    // Pega o botão de iniciar pelo ID
+    // Cria uma const e Pega o botão de iniciar pelo ID
     const btnIniciar = document.getElementById("Iniciar");
 
-    // Quando clicarem no botão iniciar:
+    // Adiciona um evento ao clicarem no botão iniciar:
     btnIniciar.addEventListener("click", () => {
         // Pega o valor digitado no input de nome
         const nome = document.getElementById("nome-jogador").value;
@@ -19,16 +19,16 @@ if (pagina.includes("index.html")) {
         window.location.href = "/Estrutura-Jogo/Jogo.html";
     });
 
-    // Botão "Reiniciar" para apagar os dados salvos e limpar a tela
+    // Botão "Reiniciar" para apagar os dados salvos na tabela de ranking
     const btnReninciar = document.getElementById('btn-reninciar');
 
     btnReninciar.addEventListener('click', () => {
-        // Quando clicar no botão Remove os dados salvos do localStorage
+        // Adiciona um evento clicar no botão para Remove os dados salvos do localStorage
         localStorage.removeItem("ranking");         // Zera o ranking
         localStorage.removeItem("nomeJogador");     // Remove o nome do jogador
         localStorage.removeItem("pontuacaoAtual");  // Zera a pontuação
 
-        // Limpa a tabela de ranking da tela (caso ela exista)
+        // Busca pela tabela de ranking e limpa o conteúdo dela
         const rankingTable = document.querySelector(".ranking-section tbody");
         if (rankingTable) {
             rankingTable.innerHTML = "";
@@ -39,7 +39,7 @@ if (pagina.includes("index.html")) {
         document.getElementById("pontuacao-header").textContent = "Pontuação: 0";
     });
 
-    // Pega o nome e pontuação atuais do jogador no localStorage
+    // Pega o nome e pontuação atuais do jogador no localStorage caso nao tenha nada salvo me retorna "Jogador" e 0
     const nomeAtual = localStorage.getItem("nomeJogador") || "Jogador";
     const pontuacaoAtual = localStorage.getItem("pontuacaoAtual") || 0;
 
@@ -64,19 +64,18 @@ if (pagina.includes("index.html")) {
         });
     }
 
-    // Lida com o botão de ajuda (abre e fecha o modal explicativo)
 
     // Pega o botão de ajuda, o modal, e o botão de fechar
     const btnAjuda = document.getElementById('btn-ajuda');
     const modalAjuda = document.getElementById('modal-ajuda');
     const fecharAjuda = document.getElementById('fechar-ajuda');
 
-    // Quando clicar no botão de ajuda, mostra o modal (display flex)
+    // Adiciona um evento ao clicar no botão de ajuda e mostra o modal a partir do display flex
     btnAjuda.addEventListener('click', () => {
         modalAjuda.style.display = 'flex';
     });
 
-    // Quando clicar em "Fechar", esconde o modal
+    // Quando clicar em "Fechar", esconde o modal com display none
     fecharAjuda.addEventListener('click', () => {
         modalAjuda.style.display = 'none';
     });
@@ -84,7 +83,7 @@ if (pagina.includes("index.html")) {
 
 
 
-// Verifica se está na página do jogo (Jogo.html)
+// Verifica se está na página do jogo (Jogo.html) se sim, executa o código abaixo
 if (pagina.includes("Jogo.html")) {
 
     // Recupera o nome salvo no localStorage
