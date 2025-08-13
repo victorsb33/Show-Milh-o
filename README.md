@@ -21,5 +21,5 @@ Projeto de quiz estilo “Show do Milhão” feito em HTML, CSS e JavaScript.
 
 ## Contato
 
-- LinkedIn: [Seu LinkedIn](https://linkedin.com/in/VictorStock)
-- GitHub: [Seu GitHub](https://github.com/victorsb33)
+- LinkedIn: [Victor Stock](https://www.linkedin.com/in/victor-stock-0ab7b6266/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app)
+- GitHub: [Victorsb33](https://github.com/victorsb33)
